@@ -9,13 +9,13 @@ export class ApiService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
+      // 'Access-Control-Allow-Origin': '*',
     }),
   };
   constructor(private http: HttpClient) {}
 
   private formatErrors(error: any) {
-    return throwError(error.error);
+    return throwError(() => new Error(error.error));
   }
   get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
     return this.http.get(path, { params }).pipe(catchError(this.formatErrors));
