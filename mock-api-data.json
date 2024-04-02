@@ -14,13 +14,7 @@
         "state": "Uttar Pradesh",
         "zipCode": "226024"
       },
-      "language": [
-        "English",
-        "Hindi",
-        "Bhojpuri",
-        "Telgu",
-        "Kannad"
-      ],
+      "language": ["English", "Hindi", "Bhojpuri", "Telgu", "Kannad"],
       "gender": "Male",
       "aboutYou": "I am a programmer...",
       "uploadPhoto": "ashish.png",
@@ -44,14 +38,12 @@
         "state": "...",
         "zipCode": "226020"
       },
-      "language": [
-        "English"
-      ],
+      "language": ["English"],
       "mobNumber": "09120599069",
       "name": "Shubham Verma",
       "password": "1234564",
       "uploadPhoto": "C:\\fakepath\\638466121505681595_logo.png",
-      "role": "seller"
+      "role": "buyer"
     }
   ],
   "products": [

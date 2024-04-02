@@ -36,7 +36,7 @@
         <li class="nav-item">
           <a class="nav-link disabled" href="#">About Us</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user_role == 'buyer'">
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -44,7 +44,7 @@
             >Order</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user_role == 'admin'">
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -52,7 +52,7 @@
             >All Order</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user_role == 'seller'">
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -60,7 +60,7 @@
             >Product</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user_role == 'admin'">
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -68,7 +68,7 @@
             >All Product</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="user_role == 'admin'">
           <a class="nav-link" routerLinkActive="active" routerLink="/admin/user"
             >Users</a
           >
@@ -88,6 +88,21 @@
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      @if(logged_in){
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link sim-pointer"
+            routerLinkActive="active"
+            routerLink="/my-profile"
+            >My Profile</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sim-pointer" (click)="logout()">Log Out</a>
+        </li>
+      </ul>
+      }@else{
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/sign-in"
@@ -100,7 +115,20 @@
           >
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto">
+      }
+      <!-- <ul class="navbar-nav ml-auto" *ngIf="!logged_in">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/sign-in"
+            >Sign In</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/sign-up"
+            >Sign Up</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto" *ngIf="logged_in">
         <li class="nav-item">
           <a
             class="nav-link sim-pointer"
@@ -110,9 +138,9 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link sim-pointer">Log Out</a>
+          <a class="nav-link sim-pointer" (click)="logout()">Log Out</a>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </nav>
